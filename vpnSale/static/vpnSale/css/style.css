@@ -1,0 +1,176 @@
+
+img.top_image{
+    width:100%;
+}
+
+/* .dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px;
+    font-size: 5px;
+    border: none;
+    cursor: pointer;
+} */
+
+.signup-label{
+    margin: 15px 0;
+}
+
+select {
+    width: 100%;
+    padding: 5px 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+
+input::file-selector-button {
+    font-weight: bold;
+    color: white;
+    padding: 5px 10px;
+    background-color: #587bfd;
+    border: thin solid grey;
+    border-radius: 3px;
+
+}
+
+
+
+#supported-devices{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 50px;
+    text-align: center;
+    background-color: #587bfd;
+}
+
+.row{
+    margin-top: 60px;
+}
+
+#phone-image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+
+.reason h5{
+    padding-top: 10px;
+}
+
+#v2ray-reason{
+    padding-left: 30px;
+    padding-top: 15px;
+}
+
+#what-vpn-text {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+.top_text_v2ray{
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.vpn_cloudImage{
+    width: 300px;
+    padding-left: 100px;
+}
+
+.v2rayImage{
+    width: 300px;
+    padding-right: 100px;
+}
+
+.first_section{
+    margin-top: 50px;
+}
+
+.secound_section_v2ray{
+    margin-top: 80px;
+}
+
+.third_section_v2ray{
+    margin-top: 80px;
+    padding-bottom: 40px;
+}
+
+.services-section{
+    margin-top: 80px;
+}
+
+#what-is-vpn{
+    
+    margin-top: 70px;
+}
+
+.card{
+    margin-top: 20px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+#first_line{
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.top_text h1{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.icon-image{
+    width: 70px;
+}
+
+
+.d-sm-flex h1{
+    font-size: 30px;
+
+}
+
+.mainPageImage{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    
+}
+
+.row-box{
+    background-color: aqua;
+    text-align: center;
+}
+div ul{
+    list-style: none;
+}
+
+.app-icons a{
+    color: white;
+    text-decoration: none;
+}
+.app-icons{
+    width: 100px;
+    margin: 0 20px;
+}
+
+#contactus{
+    margin-top: 80px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.main-footer{
+    color: white;
+    background-color: #587bfd;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+#use_videos{
+    margin-top: 0px;
+    padding-bottom: 40px;
+}
+

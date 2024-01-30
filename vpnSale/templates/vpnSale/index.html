@@ -1,0 +1,181 @@
+{% extends "vpnSale/layout.html" %}
+
+{% block topTitle %}
+    Main Page
+{% endblock %}
+
+{% block titlePage %}
+    Welcome to 
+{% endblock %}
+
+{% block bodyblock %}
+    <!-- <section >
+        <div class="container">
+            <div class="d-sm-flex align-items-center justify-content-between">
+                <div>
+                    <h1>0 to 100</h1>
+                    <p class="lead"> ljoijo ojo hiosdhf jops josdjf oiphj josi jo sjidoi sdioh soidj oidp</p>
+                </div>
+                <img class="mainPageImage aligen-item-right" src="../../static/vpnSale/images/6.3.jpg"  alt="">
+            </div>
+        </div>
+
+    </section> -->
+
+    <section class="first_section">
+        <div class="container">
+            <div class="d-sm-flex align-items-center justify-content-between">
+                <div class="top_text">
+                    <h1 id="first_line">The door is closed!</h1>
+                    <h1>You are worry about your security!</h1>
+                    <h1>You need to change your ip location!</h1>
+                    <h1>You need to hide your ip address!</h1>
+                    <h1 id="first_line">Just open the door</h1>
+                </div>
+                <img class="mainPageImage d-none d-sm-block" src="../../static/vpnSale/images/6.3.jpg"  alt="">
+            </div>
+        </div>
+    </section>
+    <section id="what-is-vpn" class="text-dark">
+        <div class="container">
+            <div>
+                <div id="what-vpn-text" class="col-md">
+                    <h2>What is vpn?</h2>
+                    <p class="lead text-dark text-justify">VPN or <span style="font-weight: bold;">“virtual private network.”</span> It’s a service that gives you safe and private access to the internet.</p>
+                    <p class="lead">In other words, a VPN connects you to a dedicated server or, more simply, a virtual computer and you connect to the global Internet through that computer.By encrypting your connection, a VPN hides your IP and online activity from spying eyes and keeps your data safe from cybercriminals.</p>
+                </div>
+            </div>
+            <div class="row align-items-center justify-content-between">
+                <div id="what-vpn-text" class="col-md">
+                    <h2>Why our services?</h2>
+                    <div class="reason" id="v2ray-reason">
+                        <h5><i class="bi bi-check-circle"></i> Enhanced Privacy</h5>
+                        <h5><i class="bi bi-check-circle"></i> Bypassing Censorship</h5>
+                        <h5><i class="bi bi-check-circle"></i> Increase Security</h5>
+                        <h5><i class="bi bi-check-circle"></i> Geo-Spoofing</h5>
+                        <h5><i class="bi bi-check-circle"></i> Customization and Flexibility</h5>
+                        <p class="lead">For a long time, we have been working in the field of vpn services in Iran and Russia, especially Iran, which has been under extensive sanctions by various countries for many years, but despite all these problems, our users still have free access to the Internet.</p>
+                        <a href="" class="btn btn-primary btn-md mt-3"><i class="bi bi-chevron-right"></i> Read more</a>
+                    </div>
+                </div>
+                <div class="col-md pt-2">
+                    <img id="phone-image" class="img-fluid"  src="../../static/vpnSale/images/vpn-on-mobile.jpg" alt="" >
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="supported-devices" class="device-section align-items-center justify-content-between">
+        <div class="container">
+            <h1>Available in all devices</h1>
+            <p>Connect with any device and enjoy secure private access to the internet even on public Wi-Fi.</p>
+            <div class="app-icons btn btn-outline-secondary">
+                <a class="text-light h3" href=""><i class="bi bi-windows"></i></a>
+                <br>
+                <a class="text-light" href="">Windows</a>
+            </div>
+            <div class="app-icons btn btn-outline-secondary">
+                <a class="text-light h3" href=""><i class="bi bi-apple"></i></a>
+                <br>
+                <a class="text-light" href="">ios</a>
+            </div>
+            <div class="app-icons btn btn-outline-secondary">
+                <a class="text-light h3" href=""><i class="bi bi-android"></i></a>
+                <br>
+                <a class="text-light" href="">Android</a>
+            </div>
+            <div class="app-icons btn btn-outline-secondary">
+                <a class="text-light h3" href=""><i class="bi bi-tv"></i></a>
+                <br>
+                <a class="text-light" href="">AndroidTV</a>
+            </div>
+
+        </div>
+    </section>
+    <section id="our_services" class="services-section align-items-center justify-content-between">
+        <div class="container">
+            <div class="row">
+                <h1 style="padding-bottom: 20px;">Our Services:</h1>
+                <h3>VPN with current locations:</h3>
+                {% if location_context %}
+                    {% for item in location_context %}
+                    <div class="col-md-4 col-lg-3">
+                        <div class="card" style="width: 98%;">
+                            <a href="/vpn/server-location-details/{{ item.id }}"><img src="{{ item.FlagImage.url }}" class="card-img-top" alt=" {{ item }} image"></a>
+                            <div class="card-body">
+                              <h5 class="card-title">{{ item }} Server</h5>
+                              <p class="card-text">With this VPN service, your IP address will be changed to the {{ item }} IP address location.</p>
+                              <a href="#" class="btn btn-primary">Get it</a>
+                            </div>
+                          </div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+                
+            <div class="row">
+                <h3>Other services:</h3>
+                <div class="col-md-4 col-lg-3">
+                    <div class="card" style="width: 98% h; height: 95%;">
+                        <img src="../../static/vpnSale/images/global-map.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h6 class="card-title">Your own Server with any location</h6>
+                          <p class="card-text">You can order any server in any other country you want and we will prepare it for you.</p></p><br><br><br>
+                          <a href="#" class="btn btn-primary">Get it</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <div class="card" style="width: 98%; height: 95%;">
+                        <img src="../../static/vpnSale/images/windows-server.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h6 class="card-title">Setup windows server</h6>
+                          <p class="card-text">You can have server with windows server OS to use it as your own computer in other country.</p><br><br><br>
+                          <a href="#" class="btn btn-primary">Get it</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <div class="card" style="width: 98%;">
+                        <img src="../../static/vpnSale/images/web-browser.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h6 class="card-title">Setup web browsing server</h6>
+                          <p class="card-text">With this service, you can connect to any requested location and use its browser to trade or do any other work where there is a risk of identifying your IP.</p>
+                          <a href="#" class="btn btn-primary">Get it</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contactus" class="bg-light">
+        <div class="container">
+            <h2 class="text-center">
+                Contact us
+            </h2>
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Your Message!</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                      <div class="d-grid">
+                        <button class="btn btn-primary">Send message</button>
+                      </div>
+                    </div>
+                <div class="col-md">
+                    <div class="list-group list-group-flush ">
+                        <a href="#" class="list-group-item bg-light">Telegram channel</a>
+                        <a href="#" class="list-group-item bg-light">Instagram channel</a>
+                        <a href="#" class="list-group-item bg-light">Youtube channel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+{% endblock %}

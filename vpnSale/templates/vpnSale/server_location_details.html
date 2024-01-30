@@ -1,0 +1,31 @@
+{% extends "vpnSale/layout.html" %}
+
+{% block topTitle %}
+    Server {{ locationDetails.Name }} Details
+{% endblock %}
+
+{% block titlePage %}
+    
+{% endblock %}
+
+{% block bodyblock %}
+<section class="first_section_location_details">
+    <div class="container">
+        <div style="padding-bottom: 40px; margin-top: 10px;" class="row">
+                <div class="col-md-3">
+                    <img style="width: 100%;" src="{{ locationDetails.FlagImage.url }}" class="rounded mx-auto d-block" alt="{{ locationDetails.Name }} flag">
+                    <div class="list-group list-group-flush ">
+                        <a href="#" class="list-group-item bg-light"><h3 style="padding-bottom: 20px;">Location Details:</h3></a>
+                        <a href="#" class="list-group-item bg-light"><h6 style="padding: 3px;">Country: {{ locationDetails.CountryName }}</h6></a>
+                        <a href="#" class="list-group-item bg-light"><h6 style="padding: 3px;">City: {{ locationDetails.CityName }}</h6></a>
+                        <a href="#" class="list-group-item bg-light"><h6 style="padding: 3px;">Info: {{ locationDetails.Description }}</h6></a>
+                    </div>
+                </div>
+            
+            <div class="col-md-9">
+                <img style="width: 100%;" src="{{ locationDetails.MapImage.url }}" class="rounded mx-auto d-block" alt="{{ locationDetails.Name }} flag">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

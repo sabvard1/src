@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block topTitle %}{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'vpnSale/css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'vpnSale/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'vpnSale/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    
+
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <!-- <div class="container"> -->
+        <div>
+          <img class="top_image" src="{% static 'vpnSale/images/4_3.jpg' %}" alt="">
+        </div>
+        <nav class="navbar navbar-expand-md bg-body-tertiary sticky-top">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><img class="icon-image" src="../../static/vpnSale/images/5_4.png" alt=""></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#what-is-vpn">What is VPN?</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#supported-devices">Download APPS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/vpn/server-list">Server list</a>
+                  </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                  {% if user.is_authenticated %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="/accounts/profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" style="color: red;" href="/accounts/logout">Log out</a>
+                    </li>
+                  {% else %}
+                    <li class="nav-item">
+                      <a class="nav-link" style="color: green;" href="/accounts/login">Log in</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" style="color: blue;" href="/accounts/signup">Sign up</a>
+                    </li>
+                  {% endif %}
+
+                </ul>
+              </div>
+            </div>
+          </nav>
+        <!-- <div class="row-box">
+            <h1>{% block titlePage %}{% endblock %}</h1>
+            <ul class="btnul">
+                <li><a href="$" class="btn btn-success">Main page</a></li>
+                <li><a href="vpnSale/list" class="btn btn-success">First page</a></li>
+            </ul>
+        </div> -->
+        <div class="row">
+            {% block bodyblock %}{% endblock %}
+        </div>
+    <!-- </div> -->
+    <footer class="main-footer text-center p-2 position-relative mt-auto">
+      <p class="lead">Our goal is your freedom</p>
+    </footer>
+</body>
+<script src="{% static 'vpnSale/js/jquery-3.7.1.min.js' %}"></script>
+<script src="{% static 'vpnSale/js/bootstrap.bundle.js' %}"></script>
+<script src="{% static 'vpnSale/js/fontawesome.js' %}"></script>
+<script src="{% static 'vpnSale/js/main.js' %}"></script>
+</html>

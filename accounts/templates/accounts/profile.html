@@ -1,0 +1,60 @@
+{% extends "vpnSale/layout.html" %}
+
+{% block topTitle %}
+    Profile
+{% endblock %}
+
+
+{% block bodyblock %}
+<div class="section">
+    <div class="container">
+        <section>
+            <div class="row">
+                <div class="col-md-8">
+                    <ul class="list-group list-group-flush">
+                        {% if profile.user.get_full_name %}
+                            <li class="list-group-item"><span style="font-weight: bold;">Name & Family:</span> {{ profile.user.get_full_name }}</li>
+                        {% else %}
+                            <li class="list-group-item"><span style="font-weight: bold;">Name & Family:</span> Not complated yet</li>
+                        {% endif %}
+                        <li class="list-group-item"><span style="font-weight: bold;">Username:</span> {{ profile.user.username}}</li>
+                        <li class="list-group-item"><span style="font-weight: bold;">Gender:</span> {{ profile.get_Gender_display }}</li>
+                        <li class="list-group-item"><span style="font-weight: bold;">Email:</span> {{ profile.user.email}}</li>
+                        <!-- <li class="list-group-item"><span style="font-weight: bold;">details:</span> {{ client_details.status }}</li> -->
+                        {% if client_details.status == "No accounts yet" %}
+                            <li class="list-group-item"><span style="font-weight: bold;">details:</span> <span style="color: red;">{{ client_details.status }}</span></li>
+                            <a class="btn btn-primary" href="/vpn/server-list">Go to servers list</a>
+                        {% elif client_details.status == "Account is active" %}
+                            <li class="list-group-item"><span style="font-weight: bold;">details:</span> <span style="color: green;">{{ client_details.status }}</span></li>
+                        {% elif client_details.status == "Connection refused" %}
+                            <li class="list-group-item"><span style="font-weight: bold;">details:</span> <span style="color: yellow">{{ client_details.status }}</span></li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <img class="rounded" src="{{ profile.ProfileImage.url }}" style="width: 200px; " onerror="this.src='../../static/accounts/images/user-icon2.png'; ">
+                </div>
+            </div>
+        </section>
+        {% if client_details.status == "Account is active" %}
+            <section style="margin-bottom: 40px;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="con-md-3">
+                            <label for="config_code1" class="form-label">Your config code:</label>
+                            <textarea class="form-control" id="config_code1" rows="4">{{ client_config_result }}</textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-6" style="text-align: center;">
+                        <div class="con-md-3">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{ client_config_result }}" class="img-thumbnail" alt="QRcode">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+        
+    </div>
+</div>
+
+{% endblock %}

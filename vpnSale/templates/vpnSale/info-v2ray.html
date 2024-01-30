@@ -1,0 +1,61 @@
+{% extends "vpnSale/layout.html" %}
+
+{% block topTitle %}
+    V2ray info
+{% endblock %}
+
+{% block titlePage %}
+
+{% endblock %}
+
+{% block bodyblock %}
+
+<section class="first_section_v2ray">
+    <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-between">
+            <div class="top_text_v2ray">
+                <h1 id="first_line">What is a vpn?</h1><br>
+                <p class="lead">A VPN, or Virtual Private Network, is a technology that creates a secure and encrypted connection over a less secure network, such as the internet. It allows you to connect to the internet through a server run by a VPN provider, which then encrypts your data and masks your IP address.</p>
+                <p>Essentially, a VPN provides privacy and anonymity by creating a private network from a public internet connection. It helps protect your online activities from being monitored, tracked, or intercepted by hackers, your internet service provider (ISP), or any other third parties who might be trying to access or collect your data. VPNs are commonly used for increased security and privacy while browsing the web, accessing sensitive information, or bypassing geographic restrictions on certain websites or content.</p>
+            </div>
+            <img class="vpn_cloudImage d-none d-sm-block" src="../../static/vpnSale/images/vpn_cloud.jpg"  alt="">
+        </div>
+    </div>
+</section>
+
+<section class="secound_section_v2ray">
+    <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-between">
+            <img class="v2rayImage d-none d-sm-block" src="../../static/vpnSale/images/V2Ray_logo.png"  alt="">
+            <div class="top_text_v2ray">
+                <h1 id="first_line">What is v2ray?</h1><br>
+                <p class="lead">V2Ray is an open-source network proxy project designed to improve internet privacy, security, and circumvention of censorship. It's a versatile tool known for its flexibility and robustness in handling various networking tasks. Originally developed in Go programming language, V2Ray supports multiple protocols and can work as a proxy server, providing functionalities similar to a VPN.</p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section class="third_section_v2ray">
+    <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-between">
+            <div class="top_text_v2ray">
+                <h1 id="first_line">Reasons to use v2ray?</h1><br>
+                <p class="lead">V2Ray is an open-source network proxy tool designed to improve privacy and security while browsing the internet. There are several reasons why someone might choose to use V2Ray:</p>
+                <ol class="v2ray-ol">
+                    <li>Enhanced Privacy: V2Ray helps in masking your IP address and encrypting your internet traffic, adding a layer of privacy to your online activities. This can prevent third parties from tracking your online behavior.</li>
+                    <br>
+                    <li>Bypassing Censorship: In regions where internet access is restricted or certain websites are blocked, V2Ray can help users bypass these restrictions by routing their traffic through servers in other locations where access is not restricted.</li>
+                    <br>
+                    <li>Increased Security: It provides a secure and encrypted connection, especially when using public Wi-Fi networks, which are vulnerable to hacking and data interception.</li>
+                    <br>
+                    <li>Geo-Spoofing: V2Ray allows users to appear as if they are accessing the internet from a different location by routing their traffic through servers in other countries. This can help in accessing geo-restricted content or services that are limited to specific regions.</li>
+                    <br>
+                    <li>Customization and Flexibility: V2Ray offers various configuration options and protocols, allowing users to customize their network settings according to their specific needs.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

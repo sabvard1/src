@@ -1,0 +1,46 @@
+{% extends "vpnSale/layout.html" %}
+
+{% block topTitle %}
+    Server List
+{% endblock %}
+
+{% block titlePage %}
+    
+{% endblock %}
+
+{% block bodyblock %}
+<section class="first_section">
+    <div class="container">
+        <div style="padding-bottom: 40px;" class="row">
+            <h3 style="padding-bottom: 20px;">Server List:</h3>
+            {% if serverList  %}
+                {% for item in serverList %}
+                    <div class="col-md-3 col-lg-3">
+                        <div class="card" style="width: 98%;">
+                            <a href="/vpn/server-details/{{ item.id }}"><img src="{{ item.locationModel.FlagImage.url }}" class="card-img-top" alt=" {{ item }} image"></a>
+                            <div class="card-body">
+                            <h5 class="card-title">Name: {{ item.Name }} </h5>
+                            <p class="card-text">This server is located in <span style="color: #587bfd;">{{ item.locationModel }}</span>.</p>
+                            <p class="card-text">Server is {{ item.get_Status_display }}.</p>
+                            <a href="/vpn/server-details/{{ item.id }}" class="
+                            {% if item.Status == item.Full %}
+                                btn btn-danger disabled
+                            {% elif item.Status == item.Ready %}
+                                btn btn-primary
+                            {% elif item.Status == item.Stoped %}
+                                btn btn-secondary disabled
+                            {% elif item.Status == item.Updating %}
+                                btn btn-warning disabled
+                            {% elif item.Status == item.Coming_soon %}
+                                btn btn-success disabled
+                            {% endif %}
+                            btn btn-primary">Read more ...</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}

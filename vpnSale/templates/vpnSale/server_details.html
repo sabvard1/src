@@ -1,0 +1,51 @@
+{% extends "vpnSale/layout.html" %}
+
+{% block topTitle %}
+    Server Details
+{% endblock %}
+
+{% block titlePage %}
+    
+{% endblock %}
+
+{% block bodyblock %}
+<section class="first_section_server_details">
+    <div class="container">
+        <div style="padding-bottom: 40px; margin-top: 10px;" class="row">
+            <div class="col-md-3">
+                <img style="width: 100%;" src="{{ server__Details.locationModel.FlagImage.url }}" class="rounded mx-auto d-block" alt="{{ server__Details.Name }} flag">
+                <div class="list-group list-group-flush ">
+                    <a href="#" class="list-group-item bg-ligh-item bg-light>t"><h3 style="padding-bottom: 20px;">Server Details:</h3></a>
+                    <a href="#" class="list-group-item bg-light"><h6 style="padding: 3px;">Name: {{ server__Details.Name }}</h6></a>
+                    <a href="#" class="list-group-item bg-light"><h6 style="padding: 3px;">Country: {{ server__Details.locationModel.CountryName }}</h6></a>
+                    <a href="#" class="list-group-item bg-light"><h6 style="padding: 3px;">City: {{ server__Details.locationModel.CityName }}</h6></a>
+                    <a href="#" class="list-group-item bg-light"><h6 style="padding: 3px;">IP Address Type: {{ server__Details.get_FixedIpAddress_display }}</h6></a>
+                    <a href="#" class="list-group-item bg-light"><h6 style="padding: 3px;">Info: {{ server__Details.Description }}</h6></a>
+                    <a href="#" class="list-group-item bg-light"><h6 style="padding: 3px;">Info: {{ server__Details.UrlAddress }}</h6></a>
+                    <a href="#" class="list-group-item bg-light"><h6 style="padding: 3px;">Status: <span style = "
+                    {% if server__Details.Status == server__Details.Full %}
+                        color: red ;
+                    {% elif server__Details.Status == server__Details.Ready %}
+                        color: green ;
+                    {% elif server__Details.Status == server__Details.Stoped %}
+                        color: gray ;
+                    {% elif server__Details.Status == server__Details.Updating %}
+                        color: yellow ;
+                    {% elif server__Details.Status == server__Details.Coming_soon %}
+                        color: blue ;
+                    {% endif %}">{{ server__Details.get_Status_display }}</span></h6></a>
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <div class="d-grid" style="margin: 10px 0;">
+                            <button type="submit" name="get_vpn"  class="btn btn-primary">Get vpn configs</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <img style="width: 100%;" src="{{ server__Details.locationModel.MapImage.url }}" class="rounded mx-auto d-block" alt="{{ server__Details.Name }} flag">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
