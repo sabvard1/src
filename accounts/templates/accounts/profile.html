@@ -20,7 +20,6 @@
                         <li class="list-group-item"><span style="font-weight: bold;">Username:</span> {{ profile.user.username}}</li>
                         <li class="list-group-item"><span style="font-weight: bold;">Gender:</span> {{ profile.get_Gender_display }}</li>
                         <li class="list-group-item"><span style="font-weight: bold;">Email:</span> {{ profile.user.email}}</li>
-                        <!-- <li class="list-group-item"><span style="font-weight: bold;">details:</span> {{ client_details.status }}</li> -->
                         {% if client_details.status == "No accounts yet" %}
                             <li class="list-group-item"><span style="font-weight: bold;">details:</span> <span style="color: red;">{{ client_details.status }}</span></li>
                             <a class="btn btn-primary" href="/vpn/server-list">Go to servers list</a>
@@ -52,6 +51,26 @@
                     </div>
                 </div>
             </section>
+            <div id="myPlot" style="width:100%;max-width:700px"></div>
+
+            <script>
+                
+                const xArray = [{{ client_download }}, {{ client_upload }}];
+                const yArray = ["Download (MB) ", "Upload (MB) "];
+
+                const data = [{
+                    x:xArray,
+                    y:yArray,
+                    type:"bar",
+                    orientation:"h",
+                    marker: {color:"rgba(255,0,0,0.6)"}
+                }];
+
+                const layout = {title:"Download and Upload Traffic"};
+
+                Plotly.newPlot("myPlot", data, layout);
+            </script>
+            
         {% endif %}
         
     </div>

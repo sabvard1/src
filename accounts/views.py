@@ -102,6 +102,8 @@ def profileView(request):
                 inbound_details["str_to_json_streamSettings"],
                 email_request,
             )
+            client_traffic_details = round(client_details_request["obj"]["up"]/1048576, 2)
+            client_traffic_details1 = round(client_details_request["obj"]["down"]/1048576, 2)
     else:
         client_details = {"status": "Connection refused"}
 
@@ -111,6 +113,8 @@ def profileView(request):
         "profile": profile,
         "client_details": client_details,
         "client_config_result": config_gen_result,
+        "client_upload" : client_traffic_details,
+        "client_download" : client_traffic_details1
     }
 
     return render(request, "accounts/profile.html", context)
