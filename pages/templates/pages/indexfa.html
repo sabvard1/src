@@ -102,6 +102,21 @@
         <a class="navbar-brand" href="#page-top"
           ><img src="{% static 'pages/assets/img/navbar-logo.png' %}" alt="..."
         /></a>
+
+        <div>
+          <ul class="navbar-nav ms-auto" >
+            <li class="nav-item">
+              <a style="font-family: 'vazir'" class="nav-link" href="/en/">انگلیسی
+                <img
+                  style="height: 20px"
+                  src="{% static 'pages/assets/img/lang.ico' %}"
+                  alt=""
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+
         <button
           class="navbar-toggler"
           type="button"
@@ -143,26 +158,8 @@
               >
             </li>
           </ul>
-          <ul class="navbar-nav ms-auto">
-            <li class="dropdown">
-              <button
-                style="background: none; font-family: 'vazir'"
-                class="dropbtn nav-link"
-              >
-                زبان
-                <img
-                  style="width: 20%"
-                  src="{% static 'pages/assets/img/lang.ico' %}"
-                  alt=""
-                />
-              </button>
-              <div class="dropdown-content">
-                <a style="font-family: 'vazir'" href="/en/">انگلیسی</a>
-                <a style="font-family: 'vazir'" href="/fa/">فارسی</a>
-              </div>
-            </li>
-          </ul>
         </div>
+        
       </div>
     </nav>
     <!-- Masthead-->
