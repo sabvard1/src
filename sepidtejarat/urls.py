@@ -19,13 +19,15 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from pages.views import index, indexfa
+from pages.views import index, indexfa, send_email
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("en/", index, name="home"),
     path("", indexfa, name="home"),
     path("fa/", indexfa, name="home"),
+    path('send-email/', send_email, name='send_email'),
+    path('contact/', send_email, name='send_email'),
     # path("", views.index, name="home"),
 ]
 

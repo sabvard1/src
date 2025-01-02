@@ -784,7 +784,18 @@
       </div>
     </div> -->
     <!-- Contact-->
+    <section>
+      <h2>Contact Us</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Send</button>
+    </form>
 
+    {% if success_message %}
+        <p style="color: green;">{{ success_message }}</p>
+    {% endif %}
+    </section>
     <section class="page-section" id="contact">
       <div class="container">
         <div class="text-center">
@@ -809,9 +820,8 @@
         <!-- To make this form functional, sign up at-->
         <!-- https://startbootstrap.com/solution/contact-forms-->
         <!-- to get an API token!-->
-        
+        <!-- <form id="contactForm" data-sb-form-api-token="API_TOKEN"> -->
         <form id="contactForm" method="POST" action="/send-email/">
-          {% csrf_token %}
           <div class="row align-items-stretch mb-5">
             <div class="col-md-6">
               <div class="form-group">
@@ -819,9 +829,9 @@
                 <input
                   class="form-control"
                   id="name"
-                  name="name"
                   type="text"
                   placeholder="نام شما *"
+                  data-sb-validations="required"
                   required
                 />
                 <div
@@ -837,10 +847,9 @@
                 <input
                   class="form-control"
                   id="email"
-                  name="email"
                   type="email"
                   placeholder="ایمیل شما *"
-                  required
+                  data-sb-validations="required,email"
                 />
                 <div
                   style="font-family: 'vazir'"
@@ -862,10 +871,9 @@
                 <input
                   class="form-control"
                   id="phone"
-                  name="phone_number"
                   type="tel"
                   placeholder="شماره تماس شما *"
-                  required
+                  data-sb-validations="required"
                 />
                 <div
                   style="font-family: 'vazir'"
@@ -882,9 +890,8 @@
                 <textarea
                   class="form-control"
                   id="message"
-                  name="message"
                   placeholder="پیام شما *"
-                  required
+                  data-sb-validations="required"
                 ></textarea>
                 <div
                   class="invalid-feedback"
@@ -926,7 +933,7 @@
           <!-- Submit Button-->
           <div style="font-family: 'vazir'" class="text-center">
             <button
-              class="btn btn-primary btn-xl text-uppercase"
+              class="btn btn-primary btn-xl text-uppercase disabled"
               id="submitButton"
               type="submit"
             >
